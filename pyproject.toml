@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chess-engine-research-framework"
+version = "0.1.0"
+description = "Modular chess-engine research framework with classical search, neural policy-value models, MCTS, self-play, and arena evaluation."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "python-chess>=1.999",
+    "torch>=2.0",
+]
+
+[project.optional-dependencies]
+training = [
+    "numpy>=1.24",
+    "zstandard>=0.22",
+]
+ui = [
+    "streamlit>=1.30",
+]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

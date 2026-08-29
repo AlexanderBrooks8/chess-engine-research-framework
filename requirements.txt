@@ -1,0 +1,5 @@
+python-chess>=1.999
+torch>=2.0
+numpy>=1.24
+zstandard>=0.22
+streamlit>=1.30
